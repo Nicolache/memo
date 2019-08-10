@@ -20,3 +20,10 @@ function! UpdateFile()
 endfunction
 
 au BufWritePre * let b:save_time = localtime()
+
+
+export EDITOR=vim; crontab -e
+vim VIM Vim
+set number
+set nonumber
+^#\@!\&^\n\@!
