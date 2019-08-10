@@ -27,3 +27,46 @@ vim VIM Vim
 set number
 set nonumber
 ^#\@!\&^\n\@!
+
+
+LINUX
+cd /usr/local/src && wget -qO- https://get.docker.com/ | sh
+unset {http,https,ftp}_proxy
+7z x '*.jar' -o'*'
+sudo -l
+sudo -ll
+sudo -lU user_name
+mkdir `date +%d-%m-%Y` && mv ./* `date +%d-%m-%Y`
+select-editor
+pip freeze > requirements.txt
+pip install -r requirements.txt
+screen -x screenname - attach
+screen -ls - list screens
+in screen session : ^a+d - leave session alone
+
+ssh-keygen -t rsa
+
+alias ls="ls -l"
+unalias ls
+
+groups username
+groupdel group
+chage -d 0 username
+usermod -aG group username
+gpasswd -a username group
+gpasswd -d username group
+deluser testuser --remove-home
+find /var/www/html-site -type f -exec chmod 644 {} \;
+find . -type f -name "*.pyc" -exec rm {} \;
+
+cat ~/.mozilla/firefox/profiles.ini | grep -i "path"
+git clone https://github.com/Unode/firefox_decrypt
+python firefox_decrypt/firefox_decrypt.py
+
+date +%s
+date -d @1500295952
+
+
+
+iptables-save > iptables.raw
+
