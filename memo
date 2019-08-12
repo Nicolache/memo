@@ -1,6 +1,13 @@
 GIT
 git reset --hard 95e7713
+git reflog
 VIM
+
+Installing plugins:
+sudo curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
+git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+:help NERDTree.txt
+
 .vimrc:
 autocmd BufLeave,FocusLost silent! wall
 

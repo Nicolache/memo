@@ -2,6 +2,7 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
+map <F2>  :NERDTreeToggle<CR>
 map ,u :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>
 map ,h :s#^#<!-- #<CR>:s#$# -->#<CR>
 au FileType python setlocal formatprg=autopep8\ -
@@ -26,3 +27,5 @@ function! UpdateFile()
 endfunction
 
 au BufWritePre * let b:save_time = localtime()
+execute pathogen#infect()
+call pathogen#helptags()
