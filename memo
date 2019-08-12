@@ -1,3 +1,5 @@
+GIT
+git reset --hard 95e7713
 VIM
 .vimrc:
 autocmd BufLeave,FocusLost silent! wall
