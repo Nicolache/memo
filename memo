@@ -4,6 +4,8 @@ git reflog
 VIM
 
 Installing plugins:
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 sudo curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 :help NERDTree.txt
