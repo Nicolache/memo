@@ -3,6 +3,7 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 map <F2>  :NERDTreeToggle<CR>
+map <F3>  :mp<CR>
 map ,u :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>
 map ,h :s#^#<!-- #<CR>:s#$# -->#<CR>
 
@@ -10,10 +11,10 @@ map ,h :s#^#<!-- #<CR>:s#$# -->#<CR>
 "=====================================================
 "" Python-mode settings
 "=====================================================
-"" отключаем автокомплит по коду (у нас вместо него используется jedi-vim)
+"" автокомплит по коду
 let g:pymode_rope = 1
 let g:pymode_rope_completion = 1
-let g:pymode_rope_complete_on_dot = 1
+let g:pymode_rope_complete_on_dot = 0
 
 " документация
 let g:pymode_doc = 1
@@ -82,6 +83,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'klen/python-mode'
 Plugin 'scrooloose/nerdtree'
+Plugin 'integralist/vim-mypy'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
