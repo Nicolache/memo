@@ -1,5 +1,6 @@
 GIT
 git reset --hard 95e7713
+git reset --hard HEAD
 git reflog
 VIM
 
