@@ -152,3 +152,6 @@ date -d @1500295952
 
 iptables-save > iptables.raw
 
+
+PYTHON
+python3.6 -m pip install flask
