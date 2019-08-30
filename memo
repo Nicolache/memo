@@ -149,6 +149,9 @@ python firefox_decrypt/firefox_decrypt.py
 date +%s
 date -d @1500295952
 
+lxc-ls -f
+lxc-console -n 101
+lxc-start -n 101 -F -l DEBUG -o /tmp/lxc-101.log
 
 
 iptables-save > iptables.raw
@@ -156,3 +159,6 @@ iptables-save > iptables.raw
 
 PYTHON
 python3.6 -m pip install flask
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.6
