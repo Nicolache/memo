@@ -113,7 +113,13 @@ set nonumber
 
 
 LINUX
+/etc/apt/sources.list -> deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
+apt-key adv --keyserver keyserver.ubuntu.com --keyserver-options http-proxy=http://10.254.200.45:8888/ --recv-keys 93C4A3FD7BB9C367
+apt update
+apt install ansible
+
 cd /usr/local/src && wget -qO- https://get.docker.com/ | sh
+curl -fsSL get.docker.com | sh
 unset {http,https,ftp}_proxy
 7z x '*.jar' -o'*'
 sudo -l
