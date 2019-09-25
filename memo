@@ -113,6 +113,16 @@ set nonumber
 
 
 LINUX
+mkdir /etc/systemd/system/docker.service.d/
+cd  /etc/systemd/system/docker.service.d/
+vim https-proxy.conf
+systemctl daemon-reload
+systemctl show --property Environment docker
+Environment=HTTPS_PROXY=http://XX.XX.XX.XX:XXXX/
+systemctl restart docker
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
 /etc/apt/sources.list -> deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
 apt-key adv --keyserver keyserver.ubuntu.com --keyserver-options http-proxy=http://10.254.200.45:8888/ --recv-keys 93C4A3FD7BB9C367
 apt update
