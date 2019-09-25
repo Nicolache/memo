@@ -116,6 +116,7 @@ LINUX
 mkdir /etc/systemd/system/docker.service.d/
 cd  /etc/systemd/system/docker.service.d/
 vim https-proxy.conf
+Environment="HTTPS_PROXY=http://XX.XX.XX.XX:XXXX/"
 systemctl daemon-reload
 systemctl show --property Environment docker
 Environment=HTTPS_PROXY=http://XX.XX.XX.XX:XXXX/
