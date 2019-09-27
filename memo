@@ -1,3 +1,68 @@
+LINUX
+tcpdump -ni eth0 tcp -s0 -w 'dump_%Y-%m-%d_%H:%M:%S.pcap' -G60
+ngrep host 192.230.50.220 and port not 22
+ngrep -W byline "heart" port 10050 > ngrep.txt &
+
+mkdir /etc/systemd/system/docker.service.d/
+cd  /etc/systemd/system/docker.service.d/
+vim https-proxy.conf
+Environment="HTTPS_PROXY=http://XX.XX.XX.XX:XXXX/"
+systemctl daemon-reload
+systemctl show --property Environment docker
+Environment=HTTPS_PROXY=http://XX.XX.XX.XX:XXXX/
+systemctl restart docker
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+/etc/apt/sources.list -> deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
+apt-key adv --keyserver keyserver.ubuntu.com --keyserver-options http-proxy=http://10.254.200.45:8888/ --recv-keys 93C4A3FD7BB9C367
+apt update
+apt install ansible
+
+cd /usr/local/src && wget -qO- https://get.docker.com/ | sh
+curl -fsSL get.docker.com | sh
+unset {http,https,ftp}_proxy
+7z x '*.jar' -o'*'
+sudo -l
+sudo -ll
+sudo -lU user_name
+mkdir `date +%d-%m-%Y` && mv ./* `date +%d-%m-%Y`
+select-editor
+pip freeze > requirements.txt
+pip install -r requirements.txt
+screen -x screenname - attach
+screen -ls - list screens
+in screen session : ^a+d - leave session alone
+
+ssh-keygen -t rsa
+
+alias ls="ls -l"
+unalias ls
+
+groups username
+groupdel group
+chage -d 0 username
+usermod -aG group username
+gpasswd -a username group
+gpasswd -d username group
+deluser testuser --remove-home
+find /var/www/html-site -type f -exec chmod 644 {} \;
+find . -type f -name "*.pyc" -exec rm {} \;
+
+cat ~/.mozilla/firefox/profiles.ini | grep -i "path"
+git clone https://github.com/Unode/firefox_decrypt
+python firefox_decrypt/firefox_decrypt.py
+
+date +%s
+date -d @1500295952
+
+lxc-ls -f
+lxc-console -n 101
+lxc-start -n 101 -F -l DEBUG -o /tmp/lxc-101.log
+
+
+iptables-save > iptables.raw
+
 GIT
 git reset --hard 95e7713
 git reset --hard HEAD
@@ -112,70 +177,15 @@ set nonumber
 ^#\@!\&^\n\@!
 
 
-LINUX
-mkdir /etc/systemd/system/docker.service.d/
-cd  /etc/systemd/system/docker.service.d/
-vim https-proxy.conf
-Environment="HTTPS_PROXY=http://XX.XX.XX.XX:XXXX/"
-systemctl daemon-reload
-systemctl show --property Environment docker
-Environment=HTTPS_PROXY=http://XX.XX.XX.XX:XXXX/
-systemctl restart docker
-
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-/etc/apt/sources.list -> deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main
-apt-key adv --keyserver keyserver.ubuntu.com --keyserver-options http-proxy=http://10.254.200.45:8888/ --recv-keys 93C4A3FD7BB9C367
-apt update
-apt install ansible
-
-cd /usr/local/src && wget -qO- https://get.docker.com/ | sh
-curl -fsSL get.docker.com | sh
-unset {http,https,ftp}_proxy
-7z x '*.jar' -o'*'
-sudo -l
-sudo -ll
-sudo -lU user_name
-mkdir `date +%d-%m-%Y` && mv ./* `date +%d-%m-%Y`
-select-editor
-pip freeze > requirements.txt
-pip install -r requirements.txt
-screen -x screenname - attach
-screen -ls - list screens
-in screen session : ^a+d - leave session alone
-
-ssh-keygen -t rsa
-
-alias ls="ls -l"
-unalias ls
-
-groups username
-groupdel group
-chage -d 0 username
-usermod -aG group username
-gpasswd -a username group
-gpasswd -d username group
-deluser testuser --remove-home
-find /var/www/html-site -type f -exec chmod 644 {} \;
-find . -type f -name "*.pyc" -exec rm {} \;
-
-cat ~/.mozilla/firefox/profiles.ini | grep -i "path"
-git clone https://github.com/Unode/firefox_decrypt
-python firefox_decrypt/firefox_decrypt.py
-
-date +%s
-date -d @1500295952
-
-lxc-ls -f
-lxc-console -n 101
-lxc-start -n 101 -F -l DEBUG -o /tmp/lxc-101.log
-
-
-iptables-save > iptables.raw
-
 
 PYTHON
 python3.6 -m pip install flask
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
+
+MYSQL
+GRANT ALL PRIVILEGES ON ...
+GRANT SELECT ON *.* TO 'user'@'XX.XX.XX.XX';
+REVOKE SELECT ON *.* FROM 'user'@'XX.XX.XX.XX';
+
 sudo apt install python3.6
