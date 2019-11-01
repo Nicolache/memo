@@ -1,8 +1,20 @@
 LINUX
+sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+curl --proxy 10.254.200.45:8888 -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+#lxc.net.0.type: phys
+#lxc.net.0.link: eth1
+#lxc.net.0.name: eth1
+
+ss -tuwln
+head /var/log/asterisk/messages | egrep -o "\[C-\w*\]"
+
+stty -ixon
 tcpdump -ni eth0 tcp -s0 -w 'dump_%Y-%m-%d_%H:%M:%S.pcap' -G60
 ngrep host 192.230.50.220 and port not 22
 ngrep -W byline "heart" port 10050 > ngrep.txt &
 
+https://registry.hub.docker.com/v2/repositories/library/mysql/tags/
 mkdir /etc/systemd/system/docker.service.d/
 cd  /etc/systemd/system/docker.service.d/
 vim https-proxy.conf
@@ -184,6 +196,17 @@ sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
 
 MYSQL
+mysql -h localhost -u root -B monitor -p < monitor.sql
+FLUSH TABLES WITH READ LOCK; SYSTEM mysqldump -u root --databases asterisk phonebase cdrbase -p{{ password }} > /root/master_dump.sql; UNLOCK TABLES;
+delete from cdrbase.cdr_asterisk where calldate<'2019-01-01 00:00:00';
+mysql --password="1" -e "show slave status\G" | grep Master_User | awk '{ print $2 }'
+show create table gtid_slave_pos;
+show table status from   ;
+SET PASSWORD FOR 'bill'@'localhost' = PASSWORD('bgbilling');
+create user 'replicator'@'%' identified by 'password';
+grant replication slave on *.* to 'replicator'@'%';
+CHANGE MASTER TO MASTER_HOST = '10.10.0.1', MASTER_USER = 'replicator', MASTER_PASSWORD = 'password', MASTER_LOG_FILE = 'mysql-bin.000001', MASTER_LOG_POS = 107;
+
 GRANT ALL PRIVILEGES ON ...
 GRANT SELECT ON *.* TO 'user'@'XX.XX.XX.XX';
 REVOKE SELECT ON *.* FROM 'user'@'XX.XX.XX.XX';
