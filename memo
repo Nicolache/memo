@@ -1,6 +1,7 @@
 LINUX
+zip -r -9 shlp.zip shlp
 sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
-curl --proxy 10.254.200.45:8888 -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+curl --proxy XX.XX.XX.XX:XXXX -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 #lxc.net.0.type: phys
 #lxc.net.0.link: eth1
