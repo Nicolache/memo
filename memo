@@ -1,4 +1,5 @@
 LINUX
+atop -r /var/log/atop/atop_20191120
  iptables-persistent
 .bashrc :
 HISTSIZE=10000
