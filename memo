@@ -1,4 +1,6 @@
 LINUX
+firewall-cmd --permanent --add-protocol=gre
+firewall-cmd --reload
 vconfig add eth1 115
 vconfig rem eth1.115
 cat /proc/net/vlan/config
