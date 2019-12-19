@@ -4,6 +4,14 @@ username  ALL=(ALL) NOPASSWD:ALL
 firewall-cmd --permanent --add-protocol=gre
 firewall-cmd --reload
 LINUX
+
+root@asterisk-test:/etc/rsyslog.d# cat asterisk-rsyslog.conf 
+local0.*                        /var/log/asterisk/rsyslog/asterisk.log
+local1.*                        /var/log/asterisk/rsyslog/verbose-messages.log
+root@asterisk-test:/etc/rsyslog.d# cat asterisk-rtp.conf 
+:msg,contains,"RTP packet" /var/log/asterisk/rsyslog/rtp.log
+root@asterisk-test:/etc/rsyslog.d#
+
 vconfig add eth1 115
 vconfig rem eth1.115
 cat /proc/net/vlan/config
