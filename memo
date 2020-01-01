@@ -61,6 +61,8 @@ test:
   tags:
     - ansible
 
+sudo gpasswd -a ${USER} docker
+docker build -t nicolache-phalcon .
 docker run -it --rm amq-phalcon sh
 docker run --rm -t -i -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register
 docker run -d --name gitlab-runner --restart always   -v /srv/gitlab-runner/config:/etc/gitlab-runner   -v /var/run/docker.sock:/var/run/docker.sock   gitlab/gitlab-runner:latest
