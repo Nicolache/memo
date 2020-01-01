@@ -55,10 +55,9 @@ test:
   tags:
     - ansible
 
+docker run -it --rm amq-phalcon sh
 docker run --rm -t -i -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register
-
 docker run -d --name gitlab-runner --restart always   -v /srv/gitlab-runner/config:/etc/gitlab-runner   -v /var/run/docker.sock:/var/run/docker.sock   gitlab/gitlab-runner:latest
-
 sudo docker run --detach   --hostname 192.168.1.47   --publish 443:443 --publish 80:80 --publish 222:22   --name gitlab   --restart always   --volume /srv/gitlab/config:/etc/gitlab   --volume /srv/gitlab/logs:/var/log/gitlab   --volume /srv/gitlab/data:/var/opt/gitlab   gitlab/gitlab-ce:latest
 
 eval "$(ssh-agent -s)"
@@ -236,7 +235,11 @@ set number
 set nonumber
 ^#\@!\&^\n\@!
 
-
+PHP
+php -m
+php -a
+php -r 'phpinfo();'
+php -r "echo Phalcon\Version::get();"
 
 PYTHON
 python3.6 -m pip install flask
