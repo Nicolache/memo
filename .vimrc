@@ -2,11 +2,14 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set expandtab
+set spell spelllang=en_us,ru_ru
+set spell!
 
 
 "map ,u :s/^\([/(]\*\\|<!--\) \(.*\) \(\*[/)]\\|-->\)$/\2/<CR>
 "map ,h :s#^#<!-- #<CR>:s#$# -->#<CR>
 
+map <F3> :set spell!<CR>
 map <F4> :w<CR>:!clear; uwsgi --http :9090 --wsgi-file %<CR>
 map <F5> :w<CR>:!clear; pycodestyle %<CR>
 map <F8> :w<CR>:!clear; mypy %<CR>
