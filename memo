@@ -10,6 +10,7 @@ grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
 reboot
 
 LINUX
+ssh -A -t nik@bastion ssh -t nik@10.172.0.4
 journalctl -u service-name.service -b
 root@asterisk-test:/etc/rsyslog.d# cat asterisk-rsyslog.conf 
 local0.*                        /var/log/asterisk/rsyslog/asterisk.log
