@@ -10,6 +10,7 @@ grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
 reboot
 
 LINUX
+ssh -X tongariro xclock
 Host someinternalhost
   ProxyCommand ssh -q bastion nc -q0 10.172.0.4 22
 ssh -A -t nik@bastion ssh -t nik@10.172.0.4
