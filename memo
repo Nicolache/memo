@@ -1,4 +1,6 @@
 CENTOS
+sudo dnf config-manager --set-enabled fedora-cisco-openh264
+sudo dnf install gstreamer1-plugin-openh264 mozilla-openh264
 sudo rpm -ivh http://archives.fedoraproject.org/pub/archive/fedora/linux/releases/19/Everything/x86_64/os/Packages/m/midori-0.5.0-1.fc19.x86_64.rpm
 username  ALL=(ALL) NOPASSWD:ALL
 firewall-cmd --permanent --add-protocol=gre
