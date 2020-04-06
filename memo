@@ -178,6 +178,8 @@ ansible-doc -l
 
 cd /usr/local/src && wget -qO- https://get.docker.com/ | sh
 base=https://github.com/docker/machine/releases/download/v0.16.0 && curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine && sudo mv /tmp/docker-machine /usr/local/bin/docker-machine && chmod +x /usr/local/bin/docker-machine
+docker-machine create --driver generic --generic-ip-address=34.65.205.148 --generic-ssh-user=dockeruser --generic-ssh-key=/home/nik/.ssh/id_rsa vm
+eval $(docker-machine env --unset)
 curl -fsSL get.docker.com | sh
 unset {http,https,ftp}_proxy
 7z x '*.jar' -o'*'
@@ -207,6 +209,24 @@ deluser testuser --remove-home
 find -maxdepth 2 -name "*.history" -type f ! \( -path "./pythono/*" -o -path "./codo/*" -o -path "./txt/*" \)
 find /var/www/html-site -type f -exec chmod 644 {} \;
 find . -type f -name "*.pyc" -exec rm {} \;
+
+wget -k -l 1 -p -E -nc https://www.w3schools.com/howto/howto_css_searchbar.asp
+wget -r -k -l 7 -p -E -nc http://site.com/
+
+   После выполнения данной команды в директорию site.com будет загружена локальная копия сайта http://site.com. Чтобы
+   открыть главную страницу сайта нужно открыть файл index.html.
+   Рассмотрим используемые параметры:
+   -r — указывает на то, что нужно рекурсивно переходить по ссылкам на сайте, чтобы скачивать страницы.
+   -k — используется для того, чтобы wget преобразовал все ссылки в скаченных файлах таким образом, чтобы по ним можно
+   было переходить на локальном компьютере (в автономном режиме).
+   -p — указывает на то, что нужно загрузить все файлы, которые требуются для отображения страниц (изображения, css
+   и т.д.).
+   -l — определяет максимальную глубину вложенности страниц, которые wget должен скачать (по умолчанию значение равно 5,
+   в примере мы установили 7). В большинстве случаев сайты имеют страницы с большой степенью вложенности и wget может
+   просто «закопаться», скачивая новые страницы. Чтобы этого не произошло можно использовать параметр -l.
+   -E — добавлять к загруженным файлам расширение .html.
+   -nc — при использовании данного параметра существующие файлы не будут перезаписаны. Это удобно, когда нужно
+   продолжить загрузку сайта, прерванную в предыдущий раз.
 
 cat ~/.mozilla/firefox/profiles.ini | grep -i "path"
 git clone https://github.com/Unode/firefox_decrypt

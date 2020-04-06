@@ -15,7 +15,7 @@ map <F5> :w<CR>:!clear; pycodestyle %<CR>
 map <F8> :w<CR>:!clear; mypy %<CR>
 map <F9> :w<CR>:!clear; python3 %<CR>
 map <F10> :w<CR>:!clear; python3.6 %<CR>
-map <F12> :q<CR>
+map <F12> :q!<CR>
 
 
 au FileType python setlocal formatprg=autopep8\ -
