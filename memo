@@ -85,6 +85,7 @@ resource "google_compute_firewall" "firewall_ssh" {
 
 KUBERNETES
 kubectl expose rc kubia --type=LoadBalancer --name kubia-http
+minikube service kubia-http
 
 
 CENTOS
