@@ -83,6 +83,9 @@ resource "google_compute_firewall" "firewall_ssh" {
   source_ranges = ["0.0.0.0/0"]
 }
 
+KUBERNETES
+kubectl expose rc kubia --type=LoadBalancer --name kubia-http
+minikube service kubia-http
 
 
 CENTOS
