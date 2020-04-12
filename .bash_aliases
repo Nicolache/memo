@@ -1,3 +1,5 @@
+alias rr='script ~/record-terminal/output-`date +%F_%X`.txt'
+alias ll='ls -la'
 alias you='mpsyt'
 alias goog='lynx_google_query_function'
 alias dod='lynx_google_query_function'
