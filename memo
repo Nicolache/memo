@@ -1,3 +1,6 @@
+JAVA
+sudo update-alternatives --config java
+
 TERRAFORM
 terraform taint google_compute_instance.app
 terraform plan
