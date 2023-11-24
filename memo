@@ -265,6 +265,16 @@ sudo curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.s
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 :help NERDTree.txt
 
+Creating a local branch from a remote branch:
+
+$ git pull origin branch-tmp:branch-tmp
+From gitlab.devops.telekom.de:wlan/frontend/wlan-portal
+ * [new branch]          branch-tmp -> branch-tmp
+Updating 8bbfb7700..8add04da3
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
 .vimrc:
 set shiftwidth=4
 set tabstop=4
